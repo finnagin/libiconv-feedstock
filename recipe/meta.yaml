@@ -49,11 +49,11 @@ outputs:
         - jq  # [unix]
       commands:
         # Ensuring iconv executable is not present.
-        # Otherwise GPL-3.0-only license needs to be porpagated.
+        # Otherwise inlcuded license is wrong and should be GPL-3.0-only.
         - test ! -f ${PREFIX}/bin/iconv                   # [unix]
         - if exist %LIBRARY_PREFIX%\bin\iconv.exe exit 1  # [win]
         # Ensuring libiconv documentation and man pages is not present.
-        # Otherwise GPL-3.0-only license needs to be porpagated.
+        # Otherwise inlcuded license is wrong and should be GPL-3.0-only.
         - test_man_files=$(jq '.files[] | select( . | startswith("share/man"))' $CONDA_PREFIX/conda-meta/{{ PKG_NAME }}-{{ PKG_VERSION }}-${PKG_BUILD_STRING}.json)  # [unix]
         - if [[ ${test_man_files} ]]; then echo "found GPL licensed files being packaged ${test_man_files}"; exit 1; fi  # [unix]
         - test_doc_files=$(jq '.files[] | select( . | startswith("share/doc"))' $CONDA_PREFIX/conda-meta/{{ PKG_NAME }}-{{ PKG_VERSION }}-${PKG_BUILD_STRING}.json)  # [unix]
@@ -76,7 +76,7 @@ outputs:
       summary: Provides iconv for systems which don't have one (or that cannot convert from/to Unicode.)
   - name: iconv
     script: install.sh
-    # there is no executable available on windows see
+    # there is no executable available on windows, see
     # https://github.com/conda-forge/libiconv-feedstock/pull/7#issuecomment-224392000
     build:
       skip: True  # [win]
@@ -103,7 +103,7 @@ about:
   license_file:
     - COPYING
     - COPYING.LIB
-  summary: Splitted feedstock Providing iconv and libiconv for systems which don't have one (or that cannot convert from/to Unicode.)
+  summary: Split feedstock providing iconv and libiconv for systems which don't have one (or that cannot convert from/to Unicode.)
 
 extra:
   recipe-maintainers:
