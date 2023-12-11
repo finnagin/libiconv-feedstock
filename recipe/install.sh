@@ -20,6 +20,6 @@ if [[ "${PKG_NAME}" == "libiconv" ]]; then
   rm -rf $PREFIX/share/man
   rm -rf $PREFIX/share/doc
 else
-	# relying on conda-build to deduplicate files
+  # relying on conda-build to deduplicate files
   echo "Keeping all files, conda-build will deduplicate files"
 fi
