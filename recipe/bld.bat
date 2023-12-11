@@ -13,7 +13,3 @@ if errorlevel 1 exit 1
 :: Test.
 ctest -C Release
 if errorlevel 1 exit 1
-
-:: Install.
-ninja install
-if errorlevel 1 exit 1
