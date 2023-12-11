@@ -106,6 +106,7 @@ about:
   summary: Split feedstock providing iconv and libiconv for systems which don't have one (or that cannot convert from/to Unicode.)
 
 extra:
+  feedstock-name: libiconv
   recipe-maintainers:
     - ocefpaf
     - jakirkham
