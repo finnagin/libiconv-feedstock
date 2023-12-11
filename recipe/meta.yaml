@@ -49,7 +49,7 @@ outputs:
         - jq  # [unix]
       commands:
         # Ensuring iconv executable is not present.
-        # Otherwise inlcuded license is wrong and should be GPL-3.0-only.
+        # Otherwise the included license is wrong and should be GPL-3.0-only.
         - test ! -f ${PREFIX}/bin/iconv                   # [unix]
         - if exist %LIBRARY_PREFIX%\bin\iconv.exe exit 1  # [win]
         # Ensuring libiconv documentation and man pages is not present.
