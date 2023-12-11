@@ -61,10 +61,8 @@ outputs:
         - if exist "%LIBRARY_PREFIX%\share\man\man3\iconv*" exit 1   # [win]
         - if exist "%LIBRARY_PREFIX%\share\doc\iconv*" exit 1        # [win]
         # Assert libraries are present
-        - test -f $CONDA_PREFIX/lib/libiconv.so    # [linux]
-        - test -f $CONDA_PREFIX/lib/libcharset.so  # [linux]
-        - test -f $CONDA_PREFIX/lib/libiconv.dylib    # [osx]
-        - test -f $CONDA_PREFIX/lib/libcharset.dylib  # [osx]
+        - test -f $CONDA_PREFIX/lib/libiconv${SHLIB_EXT}    # [unix]
+        - test -f $CONDA_PREFIX/lib/libcharset${SHLIB_EXT}  # [unix]
         - if not exist %LIBRARY_PREFIX%\lib\iconv.lib exit 1    # [win]
         - if not exist %LIBRARY_PREFIX%\lib\charset.lib exit 1  # [win]
         - if not exist %LIBRARY_PREFIX%\bin\iconv.dll exit 1    # [win]
