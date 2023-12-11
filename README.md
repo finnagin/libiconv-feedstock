@@ -1,17 +1,17 @@
-About libiconv-split-feedstock
-==============================
+About libiconv-feedstock
+========================
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libiconv-feedstock/blob/main/LICENSE.txt)
 
 
-About libiconv-split
---------------------
+About libiconv
+--------------
 
 Home: https://www.gnu.org/software/libiconv/
 
 Package license: GPL-3.0-only AND LGPL-2.1-only
 
-Summary: Splitted feedstock Providing iconv and libiconv for systems which don't have one (or that cannot convert from/to Unicode.)
+Summary: Split feedstock providing iconv and libiconv for systems which don't have one (or that cannot convert from/to Unicode.)
 
 About libiconv
 --------------
@@ -106,10 +106,10 @@ Current release info
 | [![Conda Recipe](https://img.shields.io/badge/recipe-iconv-green.svg)](https://anaconda.org/conda-forge/iconv) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/iconv.svg)](https://anaconda.org/conda-forge/iconv) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/iconv.svg)](https://anaconda.org/conda-forge/iconv) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/iconv.svg)](https://anaconda.org/conda-forge/iconv) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-libiconv-green.svg)](https://anaconda.org/conda-forge/libiconv) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libiconv.svg)](https://anaconda.org/conda-forge/libiconv) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libiconv.svg)](https://anaconda.org/conda-forge/libiconv) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libiconv.svg)](https://anaconda.org/conda-forge/libiconv) |
 
-Installing libiconv-split
-=========================
+Installing libiconv
+===================
 
-Installing `libiconv-split` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `libiconv` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
@@ -195,17 +195,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating libiconv-split-feedstock
-=================================
+Updating libiconv-feedstock
+===========================
 
-If you would like to improve the libiconv-split recipe or build a new
+If you would like to improve the libiconv recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/libiconv-split-feedstock are
+Note that all branches in the conda-forge/libiconv-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.
