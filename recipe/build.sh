@@ -4,6 +4,8 @@ cp $BUILD_PREFIX/share/libtool/build-aux/config.* ./build-aux
 cp $BUILD_PREFIX/share/libtool/build-aux/config.* ./libcharset/build-aux
 set -ex
 
+ls -lah lib/*.h
+
 ./configure --prefix=${PREFIX}  \
             --host=${HOST}      \
             --build=${BUILD}    \
