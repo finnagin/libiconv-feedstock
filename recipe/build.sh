@@ -4,7 +4,14 @@ cp $BUILD_PREFIX/share/libtool/build-aux/config.* ./build-aux
 cp $BUILD_PREFIX/share/libtool/build-aux/config.* ./libcharset/build-aux
 set -ex
 
-ls -lah lib/*.h
+# refresh the flags
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    mv lib/flags.h lib/flags.h.bak
+    $(CC) $(CFLAGS) lib/genflags.c -o genflags
+    ./genflags > lib/flags.h
+    rm -f genflags
+    diff -u lib/flags.h.bak lib/flags.h
+fi
 
 ./configure --prefix=${PREFIX}  \
             --host=${HOST}      \
