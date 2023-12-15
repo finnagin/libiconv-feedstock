@@ -26,6 +26,7 @@ cp $BUILD_PREFIX/share/libtool/build-aux/config.* ./libcharset/build-aux
             --disable-rpath
 
 if [[ "${target_platform}" == osx-* ]]; then
+    make -f Makefile.devel CC="${CC}" CFLAGS="${CFLAGS}" totally-clean
     make -f Makefile.devel CC="${CC}" CFLAGS="${CFLAGS}"
 fi
 
