@@ -22,6 +22,7 @@ requirements:
     - automake  # [osx]
     - autoconf  # [osx]
     - groff     # [osx]
+    - gperf     # [osx]
     - libtool   # [unix]
     - {{ compiler('c') }}
     - cmake     # [win]
