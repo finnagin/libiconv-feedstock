@@ -91,6 +91,8 @@ outputs:
     test:
       commands:
         - iconv --help
+        # print all supported encodings
+        - iconv -l
         # Ensure we run the built iconv and not the one from the base system.
         - test "$(command -v iconv)" = "${PREFIX}/bin/iconv"  # [unix]
         # Test working patched-in UTF-8-MAC encoding.
