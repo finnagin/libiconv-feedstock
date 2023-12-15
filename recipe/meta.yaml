@@ -19,6 +19,9 @@ build:
 
 requirements:
   build:
+    - automake  # [osx]
+    - autoconf  # [osx]
+    - groff     # [osx]
     - libtool   # [unix]
     - {{ compiler('c') }}
     - cmake     # [win]
