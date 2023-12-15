@@ -12,6 +12,9 @@ source:
     - CMakeLists.txt.patch  # [win]
     - config.h.patch  # [win]
     - configure.cmake.patch  # [win]
+    # MRB: I made this patch by diffing libiconv-1.17 and the version of the code here 
+    # https://github.com/fumiyas/libiconv-utf8mac/commit/2677394480f0d67d6f64b74045b9b4ad08097592
+    # I removed a bunch of the extraneous changes to just pull in the header fixes
     - utf_8_mac.patch  # [osx]
 
 build:
