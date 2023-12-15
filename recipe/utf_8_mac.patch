@@ -1,13 +1,3 @@
---- a/lib/Makefile.in	2022-02-12 07:13:33
-+++ b/lib/Makefile.in	2022-05-31 03:37:07
-@@ -159,6 +159,7 @@
-     converters.h \
-       ascii.h \
-       utf8.h \
-+      utf8mac.h \
-       ucs2.h \
-       ucs2be.h \
-       ucs2le.h \
 --- a/lib/converters.h	2022-01-23 17:47:43
 +++ b/lib/converters.h	2022-05-31 03:37:07
 @@ -122,6 +122,7 @@
