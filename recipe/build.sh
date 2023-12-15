@@ -25,6 +25,10 @@ cp $BUILD_PREFIX/share/libtool/build-aux/config.* ./libcharset/build-aux
             --enable-static     \
             --disable-rpath
 
+if [[ "${target_platform}" == osx-* ]]; then
+    make -f Makefile.devel CC="${CC}" CFLAGS="${CFLAGS}"
+fi
+
 make -j${CPU_COUNT}
 if [[ "${CONDA_BUILD_CROSS_COMPILATION:-0}" != "1" ]]; then
   make check
