@@ -17,7 +17,6 @@ source:
 build:
   number: 2
 
-
 requirements:
   build:
     - libtool   # [unix]
@@ -73,6 +72,7 @@ outputs:
       license: LGPL-2.1-only
       license_file: COPYING.LIB
       summary: Provides iconv for systems which don't have one (or that cannot convert from/to Unicode.)
+  
   - name: iconv
     script: install.sh
     # there is no executable available on windows, see
@@ -91,11 +91,16 @@ outputs:
     test:
       commands:
         - iconv --help
+        # Ensure we run the built iconv and not the one from the base system.
+        - test "$(command -v iconv)" = "${PREFIX}/bin/iconv"  # [unix]
+        # Test working patched-in UTF-8-MAC encoding.
+        - test "$(printf %s 'ä' | iconv --from-code=UTF-8 --to-code=UTF-8-MAC)" = "$(printf '\x61\xcc\x88')"  # [osx]        
     about:
       home: https://www.gnu.org/software/libiconv/
       license: GPL-3.0-only
       license_file: COPYING
       summary: Provides iconv for systems which don't have one (or that cannot convert from/to Unicode.)
+
 about:
   home: https://www.gnu.org/software/libiconv/
   license: GPL-3.0-only AND LGPL-2.1-only
