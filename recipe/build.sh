@@ -6,19 +6,6 @@ set -euxo pipefail
 cp $BUILD_PREFIX/share/libtool/build-aux/config.* ./build-aux
 cp $BUILD_PREFIX/share/libtool/build-aux/config.* ./libcharset/build-aux
 
-# this bit of code will refresh the flags.h header
-# for now we have hard coded the changes as a patch.
-# if [[ "${target_platform}" == osx-* ]]; then
-#     mv lib/flags.h lib/flags.h.bak
-#     ${CC_FOR_BUILD} ${CFLAGS} lib/genflags.c -o genflags
-#     ./genflags > lib/flags.h
-#     rm -f genflags
-#     # Debugging: Show generated diff
-#     diff -u lib/flags.h.bak lib/flags.h || true
-#     # Check that UTF-8.MAC is included
-#     grep utf8mac lib/flags.h
-# fi
-
 ./configure --prefix=${PREFIX}  \
             --host=${HOST}      \
             --build=${BUILD}    \
