@@ -7,7 +7,7 @@ set -ex
 # refresh the flags
 if [[ "$OSTYPE" == "darwin"* ]]; then
     mv lib/flags.h lib/flags.h.bak
-    $(CC) $(CFLAGS) lib/genflags.c -o genflags
+    ${CC} ${CFLAGS} lib/genflags.c -o genflags
     ./genflags > lib/flags.h
     rm -f genflags
     diff -u lib/flags.h.bak lib/flags.h
