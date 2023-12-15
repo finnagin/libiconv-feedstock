@@ -9,7 +9,7 @@ cp $BUILD_PREFIX/share/libtool/build-aux/config.* ./libcharset/build-aux
 # refresh the flags
 if [[ "${target_platform}" == osx-* ]]; then
     mv lib/flags.h lib/flags.h.bak
-    ${CC} ${CFLAGS} lib/genflags.c -o genflags
+    ${CC_FOR_BUILD} ${CFLAGS} lib/genflags.c -o genflags
     ./genflags > lib/flags.h
     rm -f genflags
     # Debugging: Show generated diff
